@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => MyAppState(),
       child: MaterialApp(
-        title: 'Welcome to Flutte',
+        title: 'Welcome to Flutter',
         theme: ThemeData(
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
@@ -27,20 +27,64 @@ class MyApp extends StatelessWidget {
 
 class MyAppState extends ChangeNotifier {
   var current = WordPair.random();
+
 }
 
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+       
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                // Fondo 
+                Container(
+                  width: 150,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 248, 161, 0).withOpacity(0.2),
+                    shape: BoxShape.circle,
+                  ),
+                ),
+                 
+                // Texto
+                Text(
+                  'Hello World',
+                  style: TextStyle(
+                    fontSize: 32.0,
+                    color: Color.fromARGB(255, 190, 44, 44),
+                  ),
+                ),
+              ],
+            ),
 
-return Scaffold(
-  body: Center( // Esto expande el espacio y centra al hijo
-    child: Text('Hello World',
-    style: TextStyle(
-      fontSize: 32.0,
-      color:Color.fromARGB(255, 190, 44, 44)
-    )),
-  ),
-);
+            const SizedBox(height: 30), //Espacio entre elemenytos
+
+            //Elementos laterales
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                //Estrellas
+                const Icon(Icons.star, color: Color.fromARGB(255, 255, 215, 84)),
+                const SizedBox(width: 15),
+                //Texto
+                const Text('Bienvenidos'),
+                //Estrella
+                const SizedBox(width: 15),
+                const Icon(Icons.star, color:  Color.fromARGB(255, 255, 215, 84)),
+              ],
+            ),
+            
+            
+          ],
+        ),
+      ),
+    );
   }
 }
