@@ -7,7 +7,7 @@ import 'screens/register_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(); // Esto activa Firebase en tu app
+  await Firebase.initializeApp(); 
   runApp(const MyApp());
 }
 
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const HomeScreen(),
         '/registro': (context) => const RegisterScreen(),
         '/catalogo': (context) => const CatalogScreen(),
-        '/admin': (context) => AdminScreen(), // Sin 'const' aquí
+        '/admin': (context) => AdminScreen(), 
       },
     );
   }

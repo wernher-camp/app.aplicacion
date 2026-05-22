@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
               child: const Text('INGRESAR AL CATÁLOGO'),
             ),
             TextButton(
-             onPressed: () => Navigator.pushNamed(context, '/registro'), // Aquí iría la lógica de registro
+             onPressed: () => Navigator.pushNamed(context, '/registro'), 
               child: const Text('¿No tienes cuenta? Regístrate aquí'),
             ),
             const Divider(),

@@ -15,11 +15,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   Future<void> registrar() async {
     try {
-      // Registro en Authentication
+      // Authentication
       UserCredential userCredential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: _email.text, password: _pass.text);
 
-      // Guardar en Firestore (Base de datos de usuario)
+      // Guardar en Firestore 
       await FirebaseFirestore.instance.collection('usuarios').doc(userCredential.user!.uid).set({
         'nombre': _name.text,
         'email': _email.text,
